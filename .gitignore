@@ -9,6 +9,7 @@
 *.ear
 
 **/.gradle
+!src/**/build
 **/build/
 
 gradle-app.setting
