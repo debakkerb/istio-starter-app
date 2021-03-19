@@ -10,6 +10,10 @@ public class UIController {
 
     private BookRepository bookRepository;
 
+    UIController(final BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
     @GetMapping({"/", "/index"})
     public String index(Model model) {
         model.addAttribute("version", "0.1");
