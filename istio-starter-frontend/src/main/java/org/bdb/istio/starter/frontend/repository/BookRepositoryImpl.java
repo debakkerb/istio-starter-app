@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Repository
@@ -30,6 +31,6 @@ public class BookRepositoryImpl implements BookRepository {
         HttpEntity httpEntity = new HttpEntity(null);
 
         ResponseEntity<Book[]> response = restTemplate.exchange(endpoint, HttpMethod.GET, httpEntity, Book[].class);
-        return null;
+        return Arrays.asList(response.getBody());
     }
 }

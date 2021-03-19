@@ -1,3 +1,3 @@
 rootProject.name = 'istio-starter-app'
-include 'istio-starter-frontend'
+include 'istio-starter-frontend', 'istio-starter-books'
 
