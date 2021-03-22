@@ -34,19 +34,7 @@ subprojects {
     }
 }
 
-project(':istio-starter-books') {
-    dependencies {
-        "implementation"(project(':istio-starter-domain'))
-    }
-}
-
-project(':istio-starter-frontend') {
-    dependencies {
-        "implementation"(project(':istio-starter-domain'))
-    }
-}
-
-['istio-starter-frontend', 'istio-starter-books'].each { name ->
+['istio-starter-frontend', 'istio-starter-books', 'istio-starter-users'].each { name ->
     project(":$name") {
         apply plugin: 'org.springframework.boot'
         apply plugin: 'io.spring.dependency-management'
@@ -55,6 +43,7 @@ project(':istio-starter-frontend') {
 
         dependencies {
             implementation 'org.springframework.boot:spring-boot-starter-web'
+            "implementation"(project(":istio-starter-domain"))
 
             testImplementation 'org.springframework.boot:spring-boot-starter-test'
             testImplementation "org.junit.jupiter:junit-jupiter-api:${junit_jupiter_version}"
